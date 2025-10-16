@@ -6,7 +6,6 @@ import {
   Stat,
   StatLabel,
   StatNumber,
-  StatHelpText,
   Icon,
   HStack,
   Text,

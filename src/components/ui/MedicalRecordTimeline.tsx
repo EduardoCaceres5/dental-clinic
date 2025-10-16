@@ -5,7 +5,6 @@ import {
   Text,
   Badge,
   Icon,
-  Divider,
 } from '@chakra-ui/react'
 import { FiCheckCircle, FiClock, FiAlertCircle } from 'react-icons/fi'
 import { useTranslation } from 'react-i18next'
