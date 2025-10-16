@@ -1,0 +1,70 @@
+{
+  "common": {
+    "edit": "Editar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "search": "Buscar cualquier cosa aquí...",
+    "loading": "Cargando..."
+  },
+  "navbar": {
+    "profile": "Perfil",
+    "settings": "Configuración",
+    "logout": "Cerrar Sesión"
+  },
+  "theme": {
+    "lightMode": "Modo Claro",
+    "darkMode": "Modo Oscuro"
+  },
+  "sidebar": {
+    "clinic": "Clínica",
+    "dashboard": "Tablero",
+    "reservations": "Reservaciones",
+    "patients": "Pacientes",
+    "treatments": "Tratamientos",
+    "staffList": "Lista de Personal",
+    "finance": "Finanzas",
+    "accounts": "Cuentas",
+    "sales": "Ventas",
+    "purchases": "Compras",
+    "paymentMethod": "Método de Pago",
+    "physicalAsset": "Activo Físico",
+    "stocks": "Inventario",
+    "peripherals": "Periféricos",
+    "report": "Reportes",
+    "customerSupport": "Soporte al Cliente"
+  },
+  "patient": {
+    "patientList": "Lista de pacientes",
+    "patientDetail": "Detalle del paciente",
+    "createAppointment": "Crear Cita",
+    "patientInformation": "Información del Paciente",
+    "appointmentHistory": "Historial de Citas",
+    "nextTreatment": "Próximo Tratamiento",
+    "medicalRecord": "Registro Médico",
+    "haveUneventJawline": "Tiene línea de mandíbula irregular"
+  },
+  "medicalRecord": {
+    "service": "Servicio",
+    "medical": "Médico",
+    "cosmetic": "Cosmético",
+    "odontogram": "Odontograma",
+    "maxillaryLeftLateralIncisor": "Incisivo Lateral Izquierdo Superior",
+    "highlightedTeeth": "Dientes resaltados"
+  },
+  "treatment": {
+    "date": "FECHA",
+    "condition": "CONDICIÓN",
+    "treatment": "TRATAMIENTO",
+    "dentist": "DENTISTA",
+    "reason": "MOTIVO",
+    "done": "Completado",
+    "pending": "Pendiente",
+    "cancelled": "Cancelado",
+    "caries": "Caries",
+    "toothFilling": "Empaste dental",
+    "advancedDecay": "Caries Avanzada",
+    "decayInPulp": "Caries en pulpa",
+    "notEnoughTime": "No hubo tiempo suficiente"
+  }
+}

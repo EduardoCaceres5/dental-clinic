@@ -1,0 +1,70 @@
+{
+  "common": {
+    "edit": "Edit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "search": "Search for anything here...",
+    "loading": "Loading..."
+  },
+  "navbar": {
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "theme": {
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode"
+  },
+  "sidebar": {
+    "clinic": "Clinic",
+    "dashboard": "Dashboard",
+    "reservations": "Reservations",
+    "patients": "Patients",
+    "treatments": "Treatments",
+    "staffList": "Staff List",
+    "finance": "Finance",
+    "accounts": "Accounts",
+    "sales": "Sales",
+    "purchases": "Purchases",
+    "paymentMethod": "Payment Method",
+    "physicalAsset": "Physical Asset",
+    "stocks": "Stocks",
+    "peripherals": "Peripherals",
+    "report": "Report",
+    "customerSupport": "Customer Support"
+  },
+  "patient": {
+    "patientList": "Patient list",
+    "patientDetail": "Patient detail",
+    "createAppointment": "Create Appointment",
+    "patientInformation": "Patient Information",
+    "appointmentHistory": "Appointment History",
+    "nextTreatment": "Next Treatment",
+    "medicalRecord": "Medical Record",
+    "haveUneventJawline": "Have unevent jawline"
+  },
+  "medicalRecord": {
+    "service": "Service",
+    "medical": "Medical",
+    "cosmetic": "Cosmetic",
+    "odontogram": "Odontogram",
+    "maxillaryLeftLateralIncisor": "Maxillary Left Lateral Incisor",
+    "highlightedTeeth": "Highlighted teeth"
+  },
+  "treatment": {
+    "date": "DATE",
+    "condition": "CONDITION",
+    "treatment": "TREATMENT",
+    "dentist": "DENTIST",
+    "reason": "REASON",
+    "done": "Done",
+    "pending": "Pending",
+    "cancelled": "Cancelled",
+    "caries": "Caries",
+    "toothFilling": "Tooth filling",
+    "advancedDecay": "Advanced Decay",
+    "decayInPulp": "Decay in pulp",
+    "notEnoughTime": "Not enough time"
+  }
+}
