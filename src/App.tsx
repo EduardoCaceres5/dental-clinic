@@ -14,7 +14,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<MainLayout />}>
-              <Route index element={<Dashboard />} />
+              <Route index element={<Navigate to="/patients/1" replace />} />
+              <Route path="dashboard" element={<Dashboard />} />
               <Route path="patients/:id" element={<PatientDetail />} />
               <Route path="reservations" element={<div>Reservations</div>} />
               <Route path="patients" element={<div>Patients List</div>} />
@@ -28,7 +29,7 @@ function App() {
               <Route path="peripherals" element={<div>Peripherals</div>} />
               <Route path="report" element={<div>Report</div>} />
               <Route path="support" element={<div>Customer Support</div>} />
-              <Route path="*" element={<Navigate to="/" replace />} />
+              <Route path="*" element={<Navigate to="/patients/1" replace />} />
             </Route>
           </Routes>
         </BrowserRouter>

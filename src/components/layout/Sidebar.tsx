@@ -120,7 +120,7 @@ export const Sidebar = () => {
 
         {/* Navigation - CLINIC */}
         <VStack align="stretch" spacing={1} px={4} py={4}>
-          <NavItem icon={FiHome} to="/" isActive={location.pathname === '/'}>
+          <NavItem icon={FiHome} to="/dashboard" isActive={location.pathname === '/dashboard'}>
             {t('sidebar.dashboard')}
           </NavItem>
 

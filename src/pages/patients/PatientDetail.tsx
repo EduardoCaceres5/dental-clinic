@@ -134,7 +134,7 @@ export const PatientDetail = () => {
         </Flex>
 
         {/* Tabs */}
-        <Tabs colorScheme="blue" variant="unstyled">
+        <Tabs colorScheme="blue" variant="unstyled" defaultIndex={3}>
           <TabList borderBottom="2px" borderColor="gray.200" mb={6}>
             <Tab
               _selected={{
