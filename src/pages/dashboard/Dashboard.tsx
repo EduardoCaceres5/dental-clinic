@@ -48,12 +48,12 @@ const StatCard = ({
 export const Dashboard = () => {
   return (
     <Box bg="gray.50" minH="100vh">
-      <Container maxW="container.xl" py={8}>
-        <Heading size="xl" mb={8} color="gray.900">
+      <Container maxW="container.xl" py={{ base: 4, md: 8 }} px={{ base: 4, md: 6 }}>
+        <Heading size={{ base: 'lg', md: 'xl' }} mb={{ base: 6, md: 8 }} color="gray.900">
           Dashboard
         </Heading>
 
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={6} mb={8}>
+        <SimpleGrid columns={{ base: 1, sm: 2, lg: 4 }} spacing={{ base: 4, md: 6 }} mb={{ base: 6, md: 8 }}>
           <StatCard
             title="Total Patients"
             value="1,234"

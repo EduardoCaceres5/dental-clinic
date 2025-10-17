@@ -22,16 +22,17 @@ interface NavItemProps {
   children: string
   to: string
   isActive?: boolean
+  onClick?: () => void
 }
 
-const NavItem = ({ icon, children, to, isActive }: NavItemProps) => {
+const NavItem = ({ icon, children, to, isActive, onClick }: NavItemProps) => {
   const activeBg = useColorModeValue('blue.50', 'gray.700')
   const hoverBg = useColorModeValue('gray.100', 'gray.700')
   const activeColor = useColorModeValue('brand.500', 'blue.300')
   const inactiveColor = useColorModeValue('gray.600', 'gray.400')
 
   return (
-    <Link to={to} style={{ width: '100%' }}>
+    <Link to={to} style={{ width: '100%' }} onClick={onClick}>
       <HStack
         w="full"
         px={4}
@@ -53,7 +54,11 @@ const NavItem = ({ icon, children, to, isActive }: NavItemProps) => {
   )
 }
 
-export const Sidebar = () => {
+interface SidebarProps {
+  onLinkClick?: () => void
+}
+
+export const Sidebar = ({ onLinkClick }: SidebarProps) => {
   const location = useLocation()
   const { t } = useTranslation()
   const bgColor = useColorModeValue('white', 'gray.800')
@@ -72,6 +77,7 @@ export const Sidebar = () => {
       left={0}
       top={0}
       overflowY="auto"
+      display={{ base: 'none', lg: 'block' }}
       css={{
         '&::-webkit-scrollbar': {
           width: '4px',
@@ -120,7 +126,7 @@ export const Sidebar = () => {
 
         {/* Navigation - CLINIC */}
         <VStack align="stretch" spacing={1} px={4} py={4}>
-          <NavItem icon={FiHome} to="/dashboard" isActive={location.pathname === '/dashboard'}>
+          <NavItem icon={FiHome} to="/dashboard" isActive={location.pathname === '/dashboard'} onClick={onLinkClick}>
             {t('sidebar.dashboard')}
           </NavItem>
 
@@ -139,6 +145,7 @@ export const Sidebar = () => {
             icon={FiCalendar}
             to="/reservations"
             isActive={location.pathname === '/reservations'}
+            onClick={onLinkClick}
           >
             {t('sidebar.reservations')}
           </NavItem>
@@ -146,6 +153,7 @@ export const Sidebar = () => {
             icon={FiUsers}
             to="/patients"
             isActive={location.pathname.startsWith('/patients')}
+            onClick={onLinkClick}
           >
             {t('sidebar.patients')}
           </NavItem>
@@ -153,6 +161,7 @@ export const Sidebar = () => {
             icon={FiActivity}
             to="/treatments"
             isActive={location.pathname === '/treatments'}
+            onClick={onLinkClick}
           >
             {t('sidebar.treatments')}
           </NavItem>
@@ -160,6 +169,7 @@ export const Sidebar = () => {
             icon={FiUser}
             to="/staff"
             isActive={location.pathname === '/staff'}
+            onClick={onLinkClick}
           >
             {t('sidebar.staffList')}
           </NavItem>
@@ -179,6 +189,7 @@ export const Sidebar = () => {
             icon={FiDollarSign}
             to="/accounts"
             isActive={location.pathname === '/accounts'}
+            onClick={onLinkClick}
           >
             {t('sidebar.accounts')}
           </NavItem>
@@ -186,6 +197,7 @@ export const Sidebar = () => {
             icon={FiShoppingCart}
             to="/sales"
             isActive={location.pathname === '/sales'}
+            onClick={onLinkClick}
           >
             {t('sidebar.sales')}
           </NavItem>
@@ -193,6 +205,7 @@ export const Sidebar = () => {
             icon={FiCreditCard}
             to="/purchases"
             isActive={location.pathname === '/purchases'}
+            onClick={onLinkClick}
           >
             {t('sidebar.purchases')}
           </NavItem>
@@ -200,6 +213,7 @@ export const Sidebar = () => {
             icon={FiCreditCard}
             to="/payment-method"
             isActive={location.pathname === '/payment-method'}
+            onClick={onLinkClick}
           >
             {t('sidebar.paymentMethod')}
           </NavItem>
@@ -219,6 +233,7 @@ export const Sidebar = () => {
             icon={FiPackage}
             to="/stocks"
             isActive={location.pathname === '/stocks'}
+            onClick={onLinkClick}
           >
             {t('sidebar.stocks')}
           </NavItem>
@@ -226,6 +241,7 @@ export const Sidebar = () => {
             icon={FiBox}
             to="/peripherals"
             isActive={location.pathname === '/peripherals'}
+            onClick={onLinkClick}
           >
             {t('sidebar.peripherals')}
           </NavItem>
@@ -236,6 +252,7 @@ export const Sidebar = () => {
             icon={FiFileText}
             to="/report"
             isActive={location.pathname === '/report'}
+            onClick={onLinkClick}
           >
             {t('sidebar.report')}
           </NavItem>
@@ -243,6 +260,7 @@ export const Sidebar = () => {
             icon={FiHeadphones}
             to="/support"
             isActive={location.pathname === '/support'}
+            onClick={onLinkClick}
           >
             {t('sidebar.customerSupport')}
           </NavItem>

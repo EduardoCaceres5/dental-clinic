@@ -7,7 +7,12 @@ export const MainLayout = () => {
   return (
     <Box display="flex" minH="100vh">
       <Sidebar />
-      <Box ml="280px" flex={1} display="flex" flexDirection="column">
+      <Box
+        ml={{ base: 0, lg: '280px' }}
+        flex={1}
+        display="flex"
+        flexDirection="column"
+      >
         <Navbar />
         <Box flex={1}>
           <Outlet />

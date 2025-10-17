@@ -69,7 +69,7 @@ export const Odontogram = ({
   return (
     <Box
       bg="white"
-      p={8}
+      p={{ base: 4, md: 8 }}
       borderRadius="xl"
       border="1px"
       borderColor="gray.200"
@@ -77,13 +77,13 @@ export const Odontogram = ({
       maxW="550px"
     >
       {/* Title */}
-      <Text fontSize="xl" fontWeight="bold" mb={8} color="gray.900">
+      <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="bold" mb={{ base: 4, md: 8 }} color="gray.900">
         {t('medicalRecord.odontogram')}
       </Text>
 
       {/* Upper Teeth */}
-      <Box mb={8}>
-        <SimpleGrid columns={8} spacing={2} justifyItems="center" mb={1}>
+      <Box mb={{ base: 4, md: 8 }}>
+        <SimpleGrid columns={8} spacing={{ base: 1, md: 2 }} justifyItems="center" mb={1}>
           {upperRight.map((num) => (
             <Box key={num} textAlign="center">
               <Text fontSize="9px" color="gray.400" mb={1} fontWeight="500">

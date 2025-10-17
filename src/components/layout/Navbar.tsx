@@ -16,6 +16,12 @@ import {
   Badge,
   Button,
   useColorModeValue,
+  useDisclosure,
+  Drawer,
+  DrawerBody,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
 } from '@chakra-ui/react'
 import {
   FiSearch,
@@ -26,12 +32,15 @@ import {
   FiChevronDown,
   FiUser,
   FiLogOut,
+  FiMenu,
 } from 'react-icons/fi'
 import { useTranslation } from 'react-i18next'
 import { ThemeSwitcher } from '../ui/ThemeSwitcher'
+import { Sidebar } from './Sidebar'
 
 export const Navbar = () => {
   const { t } = useTranslation()
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const bgColor = useColorModeValue('white', 'gray.800')
   const borderColor = useColorModeValue('gray.200', 'gray.700')
   const inputBg = useColorModeValue('gray.50', 'gray.700')
@@ -44,15 +53,25 @@ export const Navbar = () => {
       bg={bgColor}
       borderBottom="1px"
       borderColor={borderColor}
-      px={8}
+      px={{ base: 4, md: 8 }}
       py={4}
       position="sticky"
       top={0}
       zIndex={10}
     >
-      <HStack spacing={6} justify="space-between">
+      <HStack spacing={{ base: 3, md: 6 }} justify="space-between">
+        {/* Mobile Menu Button */}
+        <IconButton
+          aria-label="Open menu"
+          icon={<Icon as={FiMenu} />}
+          onClick={onOpen}
+          display={{ base: 'flex', lg: 'none' }}
+          variant="ghost"
+          size="md"
+        />
+
         {/* Search Bar */}
-        <InputGroup maxW="500px" flex={1}>
+        <InputGroup maxW={{ base: 'auto', md: '500px' }} flex={1} display={{ base: 'none', sm: 'flex' }}>
           <InputLeftElement pointerEvents="none">
             <Icon as={FiSearch} color="gray.400" />
           </InputLeftElement>
@@ -70,7 +89,7 @@ export const Navbar = () => {
         </InputGroup>
 
         {/* Right Section */}
-        <HStack spacing={4}>
+        <HStack spacing={{ base: 2, md: 4 }}>
           {/* Add Button */}
           <IconButton
             aria-label="Add"
@@ -78,6 +97,7 @@ export const Navbar = () => {
             colorScheme="blue"
             borderRadius="full"
             size="md"
+            display={{ base: 'none', md: 'flex' }}
           />
 
           {/* Help Icon */}
@@ -88,6 +108,7 @@ export const Navbar = () => {
             borderRadius="full"
             size="md"
             color="gray.600"
+            display={{ base: 'none', md: 'flex' }}
           />
 
           {/* Analytics Icon */}
@@ -98,6 +119,7 @@ export const Navbar = () => {
             borderRadius="full"
             size="md"
             color="gray.600"
+            display={{ base: 'none', md: 'flex' }}
           />
 
           {/* Theme Switcher */}
@@ -111,10 +133,11 @@ export const Navbar = () => {
             borderRadius="full"
             size="md"
             color="gray.600"
+            display={{ base: 'none', sm: 'flex' }}
           />
 
           {/* Tasks Badge */}
-          <Box position="relative">
+          <Box position="relative" display={{ base: 'none', md: 'block' }}>
             <IconButton
               aria-label="Tasks"
               icon={
@@ -146,7 +169,7 @@ export const Navbar = () => {
             <MenuButton
               as={Button}
               variant="ghost"
-              rightIcon={<Icon as={FiChevronDown} />}
+              rightIcon={<Icon as={FiChevronDown} display={{ base: 'none', md: 'block' }} />}
               px={2}
             >
               <HStack spacing={3}>
@@ -156,7 +179,7 @@ export const Navbar = () => {
                   src=""
                   bg="blue.500"
                 />
-                <Box textAlign="left">
+                <Box textAlign="left" display={{ base: 'none', md: 'block' }}>
                   <Text fontSize="sm" fontWeight="600" color={textColor}>
                     Darrell Steward
                   </Text>
@@ -181,6 +204,17 @@ export const Navbar = () => {
           </Menu>
         </HStack>
       </HStack>
+
+      {/* Mobile Sidebar Drawer */}
+      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent maxW="280px">
+          <DrawerCloseButton />
+          <DrawerBody p={0}>
+            <Sidebar onLinkClick={onClose} />
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
     </Box>
   )
 }

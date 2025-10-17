@@ -72,7 +72,7 @@ export const PatientDetail = () => {
 
   return (
     <Box bg="gray.50" minH="100vh">
-      <Container maxW="container.xl" py={6}>
+      <Container maxW="container.xl" py={{ base: 4, md: 6 }} px={{ base: 4, md: 6 }}>
         {/* Breadcrumb */}
         <Breadcrumb
           spacing={2}
@@ -92,12 +92,18 @@ export const PatientDetail = () => {
         </Breadcrumb>
 
         {/* Header */}
-        <Flex justify="space-between" align="start" mb={8}>
+        <Flex
+          direction={{ base: 'column', md: 'row' }}
+          justify="space-between"
+          align={{ base: 'stretch', md: 'start' }}
+          mb={{ base: 6, md: 8 }}
+          gap={{ base: 4, md: 0 }}
+        >
           <HStack spacing={4} align="start">
-            <Avatar size="xl" name={mockPatient.name} bg="blue.500" />
+            <Avatar size={{ base: 'lg', md: 'xl' }} name={mockPatient.name} bg="blue.500" />
             <Box>
-              <HStack spacing={3} mb={2}>
-                <Text fontSize="3xl" fontWeight="bold" color="gray.900">
+              <HStack spacing={3} mb={2} flexWrap="wrap">
+                <Text fontSize={{ base: '2xl', md: '3xl' }} fontWeight="bold" color="gray.900">
                   {mockPatient.name}
                 </Text>
                 <Button
@@ -119,21 +125,35 @@ export const PatientDetail = () => {
           </HStack>
 
           <HStack spacing={3}>
-            <Button colorScheme="blue" size="lg">
+            <Button colorScheme="blue" size={{ base: 'md', md: 'lg' }} flex={{ base: 1, md: 'auto' }}>
               {t('patient.createAppointment')}
             </Button>
             <IconButton
               aria-label="More options"
               icon={<Icon as={FiMoreVertical} />}
               variant="ghost"
-              size="lg"
+              size={{ base: 'md', md: 'lg' }}
             />
           </HStack>
         </Flex>
 
         {/* Tabs */}
         <Tabs colorScheme="blue" variant="unstyled" defaultIndex={3}>
-          <TabList borderBottom="2px" borderColor="gray.200" mb={6}>
+          <TabList
+            borderBottom="2px"
+            borderColor="gray.200"
+            mb={6}
+            overflowX="auto"
+            css={{
+              '&::-webkit-scrollbar': {
+                height: '4px',
+              },
+              '&::-webkit-scrollbar-thumb': {
+                background: '#CBD5E0',
+                borderRadius: '24px',
+              },
+            }}
+          >
             <Tab
               _selected={{
                 color: 'blue.600',
